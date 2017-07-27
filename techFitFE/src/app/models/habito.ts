@@ -1,4 +1,5 @@
-import { Usuario } from './usuario'
+import { Usuario } from './usuario';
+import { Dia } from './dia';
 
 export class Habito {
 	hid : number;
@@ -9,10 +10,10 @@ export class Habito {
 	fechaF : Date;
 	progreso : number;
 	estado : number;
-	diaSemana : string;
+	listaDias : Array<Dia[]>;
 
 	constructor(hid:number, titulo:string, descripcion:string, usuario:Usuario[], 
-		fechaI:Date, fechaF:Date, progreso:number, estado:number, diaSemana:string) {
+		fechaI:Date, fechaF:Date, progreso:number, estado:number, listaDias:Array<Dia[]>) {
 		
 		this.hid = hid;
 		this.titulo = titulo;
@@ -22,5 +23,6 @@ export class Habito {
 		this.fechaF = fechaF;
 		this.progreso = progreso;
 		this.estado = estado;
-		this.diaSemana = diaSemana;
+		this.listaDias = listaDias;
+	}
 }

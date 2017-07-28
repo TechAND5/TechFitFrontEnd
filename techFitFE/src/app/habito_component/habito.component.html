@@ -1,0 +1,32 @@
+<div>
+	<div class="mdl-cell--12-col">
+		<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+	
+				<tr>
+					<td>id</td>
+					<td>Título</td>
+					<td>Descripción</td>
+					<td>Usuario</td>
+					<td>Fecha inicio</td>
+					<td>Fecha final</td>
+					<td>Progreso</td>
+					<td>Estado</td>
+					<td>Lista de días</td>
+				</tr>
+			
+				<tr *ngFor="let lista_habitos of lista">
+					<td>{{lista_habitos.hid}}</td>
+					<td>{{lista_habitos.titulo}}</td>
+					<td>{{lista_habitos.descripcion}}</td>
+					<td>{{lista_habitos.usuario}}</td>
+					<td>{{lista_habitos.fechaI}}</td>
+					<td>{{lista_habitos.fechaF}}</td>
+					<td>{{lista_habitos.progreso}}</td>
+					<td>{{lista_habitos.estado}}</td>
+					<td>{{lista_habitos.listaDias}}</td>
+					
+				</tr>
+			
+		</table>
+	</div>
+</div>

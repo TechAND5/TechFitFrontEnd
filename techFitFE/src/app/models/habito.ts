@@ -6,14 +6,14 @@ export class Habito {
 	titulo : string;
 	descripcion : string;
 	usuario : Usuario[];
-	fechaI : Date;
-	fechaF : Date;
+	fechaI : string;
+	fechaF : string;
 	progreso : number;
 	estado : number;
 	listaDias : Array<Dia[]>;
 
 	constructor(hid:number, titulo:string, descripcion:string, usuario:Usuario[], 
-		fechaI:Date, fechaF:Date, progreso:number, estado:number, listaDias:Array<Dia[]>) {
+		fechaI:string, fechaF:string, progreso:number, estado:number, listaDias:Array<Dia[]>) {
 		
 		this.hid = hid;
 		this.titulo = titulo;

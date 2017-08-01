@@ -1,64 +1,72 @@
-   <nav class="navbar navbar-light navbar-static bg-faded burgerMenu">
-         <div class="container-fluid">     
-            <div class="navbar-header col-xs-12">
-                  <button type="button" class="navbar-toggle collapsed pull-left burgerIcon"  id="navbarSideButton">
-                     <span class="sr-only">Toggle navigation</span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand pull-right" href="#"><img class="logoTechFit" src="../public/img/logotechfit-1.png" alt="logo"></a>
+<nav class="navbar navbar-light navbar-static bg-faded burgerMenu">
+    <div class="container-fluid">     
+        <div class="navbar-header col-xs-12">
+            <button type="button" class="navbar-toggle collapsed pull-left burgerIcon"  id="navbarSideButton">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand pull-right" href="#"><img class="logoTechFit" src="assets/img/logotechfit-1.png" alt="logo"></a>
+        </div>
+        <ul class="navbar-side pull-left desaparece" id="navbarSide">
+            <li class="navbar-side-item">
+                <a href="#" class="side-link"><span class="glyphicon glyphicon-remove" id="btnOcultar"></span></a>
+            </li>
+            <li class="navbar-side-item" >
+                <a href="habitList.html" class="side-link">
+                    <span class="glyphicon glyphicon-list-alt"></span>
+                    <span> Lista de Habitos</span>
+                </a>
+            </li>
+            <li class="navbar-side-item">
+                <a href="#" class="side-link">
+                    <span class="glyphicon glyphicon-plus"></span>
+                     <span> Nuevo Habito</span>
+                </a>
+            </li>
+            <li class="navbar-side-item">
+                <a href="#" class="side-link">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <span> Perfil</span>
+                </a>
+            </li>
+            <li class="navbar-side-item">
+                <a href="#" class="side-link">
+                    <span class="glyphicon glyphicon-share"></span>
+                    <span> Compartir</span>
+                </a>
+            </li>
+            <li class="navbar-side-item">
+                <a href="#" class="side-link">
+                    <span class="glyphicon glyphicon-log-out"></span>
+                    <span> LogOut</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav> 
+
+<section class="container">
+      <ul class="listaHabitos">
+         <li class="itemHabitos row" id="h1" *ngFor="let un_habito of lista_habitos">
+            <a href="detalleH.html">
+               <div  class="infoHabitos ">
+                  <span class="col-xs-1">
+                     <img  class="logoCircle" src="assets/img/logotechfit-2.png" alt="logo">
+                  </span>
+                  <span class="col-xs-6 tituloH">{{un_habito.titulo}}</span><!--titulo-->
+                  <span class="col-xs-3">{{un_habito.estado}}</span><!--estado-->
+                  <span class="col-xs-2 porcentaje">{{un_habito.progreso}}%</span><!--progreso-->
                </div>
-               <ul class="navbar-side pull-left desaparece" id="navbarSide">
-                  <li class="navbar-side-item">
-                     <a href="#" class="side-link"><span class="glyphicon glyphicon-remove" id="btnOcultar"></span></a>
-                  </li>
-                  <li class="navbar-side-item" >
-                     <a href="habitList.html" class="side-link">
-                        <span class="glyphicon glyphicon-list-alt"></span>
-                        <span> Lista de Habitos</span>
-                     </a>
-                  </li>
-                  <li class="navbar-side-item">
-                     <a href="#" class="side-link">
-                        <span class="glyphicon glyphicon-plus"></span>
-                        <span> Nuevo Habito</span>
-                     </a>
-                  </li>
-                  <li class="navbar-side-item">
-                     <a href="#" class="side-link">
-                        <span class="glyphicon glyphicon-user"></span>
-                        <span> Perfil</span>
-                     </a>
-                  </li>
-                  <li class="navbar-side-item">
-                     <a href="#" class="side-link">
-                        <span class="glyphicon glyphicon-share"></span>
-                        <span> Compartir</span>
-                     </a>
-                  </li>
-                  <li class="navbar-side-item">
-                     <a href="#" class="side-link">
-                        <span class="glyphicon glyphicon-log-out"></span>
-                        <span> LogOut</span>
-                     </a>
-                  </li>
-               </ul>
-         </div>
-      </nav> 
-<div>
-	<div class="mdl-cell--12-col">
-		<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-				<tr>
-					<td>Título</td>
-					<td>Progreso</td>
-					<td>Estado</td>	
-				</tr>
-				<tr *ngFor="let lista_habitos of lista_habitos">	
-					<td class="col-xs-6 ">{{lista_habitos.titulo}}</td>
-					<td>{{lista_habitos.progreso}}</td>
-					<td>{{lista_habitos.estado}}</td>
-				</tr>
-		</table>
-	</div>
-</div>
+               <div class="progress">
+                  <div class="progress-bar col-xs-12" role="progressbar"  aria-valuemin="0" aria-valuemax="100" [style.width.%] ="un_habito.progreso">
+                     <span class="sr-only">{{un_habito.progreso}}% Complete</span>
+                  </div>
+               </div>
+            </a>
+         </li>
+      </ul>
+      
+   </section>
+

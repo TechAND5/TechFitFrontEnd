@@ -21,15 +21,11 @@
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "../public/css/styles.css",
-        "../public/css/login.css",
         "../public/css/calendar.css"
       ],
       "scripts": [
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-        "../public/js/npm.js",
-        "../public/js/js.js",
-        "../public/js/calendar.js",
-        "../public/js/login01.js"
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+        
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

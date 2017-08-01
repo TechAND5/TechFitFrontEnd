@@ -6,7 +6,4 @@ import { Component } from '@angular/core';// Importamos la funcionalidad de comp
   styleUrls: ['./app.component.css']// En que ruta se encuentra su hoja de estilos
 })
 export class AppComponent {
-	// La clase que vamos a exportar le dará vida a nuestros componente, podemos 
-	//tener incluso variables y funciones queramos usar en nuestros HTML ya montado
-  title = 'app works!!';
 }

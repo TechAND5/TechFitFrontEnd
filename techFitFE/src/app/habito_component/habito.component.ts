@@ -13,18 +13,19 @@ import { Dia } from '../models/dia';
  	styleUrls: ['./habito.component.css']// En que ruta se encuentra su hoja de estilos
 })
 export class HabitoComponent {
-	lista_habitos:Habito[];
+	lista_habitos:any;
 
 	constructor(private _http:Http){
-		this._http.get('http://www.mocky.io/v2/597b61e51200009308696e6b')
+		this._http.get('http://www.mocky.io/v2/597f3a581000004606b433f8')
 		.map(
 			(response: Response) => {
-				this.lista_habitos=<Habito[]>response.json(); 
+				this.lista_habitos=<any[]>response.json(); 
 				return this.lista_habitos;
 			}
 		)
-		.do((habitos: Habito[]) => {
-			console.log('getHabitos...',this.lista_habitos);
+		.do(
+			(misHabitos: any[]) => {
+			console.log('getHabitos...' + misHabitos);
 		})
 		.catch(
 			(error:any) => {

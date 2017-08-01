@@ -1,32 +1,64 @@
+   <nav class="navbar navbar-light navbar-static bg-faded burgerMenu">
+         <div class="container-fluid">     
+            <div class="navbar-header col-xs-12">
+                  <button type="button" class="navbar-toggle collapsed pull-left burgerIcon"  id="navbarSideButton">
+                     <span class="sr-only">Toggle navigation</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand pull-right" href="#"><img class="logoTechFit" src="../public/img/logotechfit-1.png" alt="logo"></a>
+               </div>
+               <ul class="navbar-side pull-left desaparece" id="navbarSide">
+                  <li class="navbar-side-item">
+                     <a href="#" class="side-link"><span class="glyphicon glyphicon-remove" id="btnOcultar"></span></a>
+                  </li>
+                  <li class="navbar-side-item" >
+                     <a href="habitList.html" class="side-link">
+                        <span class="glyphicon glyphicon-list-alt"></span>
+                        <span> Lista de Habitos</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="#" class="side-link">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        <span> Nuevo Habito</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="#" class="side-link">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span> Perfil</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="#" class="side-link">
+                        <span class="glyphicon glyphicon-share"></span>
+                        <span> Compartir</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="#" class="side-link">
+                        <span class="glyphicon glyphicon-log-out"></span>
+                        <span> LogOut</span>
+                     </a>
+                  </li>
+               </ul>
+         </div>
+      </nav> 
 <div>
 	<div class="mdl-cell--12-col">
 		<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-	
 				<tr>
-					<td>id</td>
 					<td>Título</td>
-					<td>Descripción</td>
-					<td>Usuario</td>
-					<td>Fecha inicio</td>
-					<td>Fecha final</td>
 					<td>Progreso</td>
-					<td>Estado</td>
-					<td>Lista de días</td>
+					<td>Estado</td>	
 				</tr>
-			
-				<tr *ngFor="let lista_habitos of lista">
-					<td>{{lista_habitos.hid}}</td>
-					<td>{{lista_habitos.titulo}}</td>
-					<td>{{lista_habitos.descripcion}}</td>
-					<td>{{lista_habitos.usuario}}</td>
-					<td>{{lista_habitos.fechaI}}</td>
-					<td>{{lista_habitos.fechaF}}</td>
+				<tr *ngFor="let lista_habitos of lista_habitos">	
+					<td class="col-xs-6 ">{{lista_habitos.titulo}}</td>
 					<td>{{lista_habitos.progreso}}</td>
 					<td>{{lista_habitos.estado}}</td>
-					<td>{{lista_habitos.listaDias}}</td>
-					
 				</tr>
-			
 		</table>
 	</div>
 </div>

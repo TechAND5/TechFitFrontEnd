@@ -1,0 +1,201 @@
+/*#C0CA33 verde del logo*/
+/*#F1F4D5 fondo sidebar*/
+/*#86CAF0  azul claro del logo - grafico*/
+/*#419FC6 azul claro del logo - tipografia*/
+@font-face {
+    font-family: 'Jura', sans-serif;
+    src: url(../fonts/Jura-Bold.ttf),
+    	   url(../fonts/Jura-Light.ttf),
+    	   url(../fonts/Jura-Medium.ttf),
+		     url(../fonts/Jura-Regular.ttf),
+		     url(../fonts/Jura-SemiBold.ttf);
+	}
+@font-face {
+  font-family: 'glyphicons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/glyphicons-halflings-regular.eot); /* For IE6-8 */
+  src: local('glyphicons'),
+       local('glyphicons-halflings-regular'),
+       url(../fonts/glyphicons-halflings-regular.woff2) format('woff2'),
+       url(../fonts/glyphicons-halflings-regular.woff) format('woff'),
+       url(../fonts/glyphicons-halflings-regular.ttf) format('truetype');
+}
+/*fonts*/
+*{
+  margin:0;
+  padding: 0; 
+}
+body{
+	font-family: 'Jura', sans-serif;
+	color:#595959;
+
+}
+a, a:hover, a:focus {
+  font-family: 'Jura', sans-serif;
+  color: #666666;
+  text-decoration: none;
+  transition: all 0.3s;
+}li{
+  list-style: none;
+}
+span{
+  font-family: 'Jura', sans-serif;
+}
+section{
+  position: relative;
+
+}
+.burgerMenu .burgerIcon,.burgerMenu .burgerIcon:hover,.burgerMenu .burgerIcon:focus{
+  background: #C0CA33;
+}
+.btn-default:active:hover,.btn-default:active:focus{
+    color: #fff;
+    background-color: #C0CA33;
+    border-color: #8c8c8c;
+}
+.btn.btn-default{
+  background: #C0CA33;
+  color: #fff;
+  text-shadow: -1px 0px 1px rgba(128, 128, 128,0.5);
+  border-radius:10px;
+}
+.navbar{
+  margin-bottom: 12px;
+}
+.navbar-toggle{
+  border-radius: 10px;
+}
+.navbar-brand{
+  padding: 15px 5px;
+}
+.container-fluid {
+  padding-right: 0px;
+} 
+.container-fluid > .navbar-header{
+  
+  padding-left: 10px;
+  width: 100%;
+
+}
+.logoTechFit{
+    width: 40px;
+    position: relative;
+    bottom: 10px;
+}
+.logoCircle{
+  width: 25px;
+  padding: 0px 0px 5px 5px;
+}
+.navbar-side {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top:0;
+  left: 0;
+  padding: 0;
+  list-style: none;
+  border-right: 2px solid #fff;
+  background-color:#C0CA33;
+  overflow-y: scroll;
+  z-index: 1000;
+}
+.desaparece{
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
+}
+ .navbar-side-item {
+  padding: 1.5rem 0;
+  margin: 0;
+  border-bottom: 2px solid #fff;
+  height: 5rem;
+}
+
+.side-link {
+  padding-left: 2rem;
+  color:#fff;
+  text-shadow: -1px 0px 1px rgba(128, 128, 128,0.5);
+}
+
+.icon-bar{
+  background-color:#fff;
+  -webkit-box-shadow: 4px 4px 3px -3px rgba(128, 128, 128,0.5);
+  -moz-box-shadow: 4px 4px 3px -3px rgba(128, 128, 128,0.5);
+  box-shadow: 4px 4px 3px -3px rgba(128, 128, 128,0.5);
+}
+ .reveal {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  -webkit-transition: 300ms ease;
+  transition: 300ms ease;
+  overflow-y:hidden
+}
+.progress{
+  height: 5px;
+  width: 100%;
+  margin-bottom:0;
+}
+.progress-detail{
+  max-width: 200px;
+  height: 15px;
+  margin-bottom:0;
+  padding-left: 0;
+  padding-right: 0;
+      margin-top: 3px;
+}
+.progress-bar{
+  background: #419FC6;
+}
+.listaHabitos{
+  margin-top: 15px;
+}
+.itemHabitos{
+  padding: 10px;
+}
+.itemHabitos>.infoHabitos>span{
+  padding: 0px 0px 5px;
+}
+.itemHabitos>.infoHabitos>.tituloH{
+  padding-left: 5px;
+}
+.porcentaje{
+  text-align: center;
+}
+.infoHabitos:first-child{
+  text-align: left;
+}
+.col-xs-12{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+
+#newHabitbtn{
+  border-radius: 10px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.detail-info,.btnsD{
+  padding: 5px 10px 5px 120px;
+
+}
+
+
+
+/*MEDIA QUERIES*/
+
+@media (min-width: 768px){
+  .navbar-toggle {
+    display: inline-block;
+   }
+  .container-fluid > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse{
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+}
+

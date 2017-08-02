@@ -9,7 +9,9 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "../public/img/logotechfit-1.png"
+        "../public/img/logotechfit.png",
+        "../public/img/logotechfit-1.png",
+        "../public/img/logotechfit-2.png"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -20,11 +22,11 @@
       "prefix": "app",
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "../public/css/styles.css",
-        "../public/css/calendar.css"
+        "../public/css/styles.css"
       ],
       "scripts": [
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "../node_modules/moment/min/moment.min.js"
         
       ],
       "environmentSource": "environments/environment.ts",

@@ -2,9 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CalendarModule } from 'angular-calendar';
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-import { DemoUtilsModule } from '../demo-utils/module';
 
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -12,27 +9,28 @@ import { AppComponent } from './app.component';
 import { routing } from './routing';
 
 import { UsuarioComponent } from './usuario_component/usuario.component';
-import { HabitoComponent } from './habito_component/habito.component';
+import { HabitosComponent } from './habitos_component/habitos.component';
 import { DiaComponent } from './dia_component/dia.component';
-import { CalendarioComponent } from './calendario_component/calendario.component';
-
+import { MenuComponent } from './menu_component/menu.component';
+import { DatePickerComponent } from './datepicker/datepicker';
+import { DetalleHabitoComponent } from './detalleHabito_component/detalleHabito.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsuarioComponent,
-    HabitoComponent,
+    HabitosComponent,
     DiaComponent,
-    CalendarioComponent
+    MenuComponent,
+    DatePickerComponent,
+    DetalleHabitoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
 	  HttpModule,
     BrowserAnimationsModule,
-    NgbModalModule.forRoot(),
-    CalendarModule.forRoot(),
-    DemoUtilsModule
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

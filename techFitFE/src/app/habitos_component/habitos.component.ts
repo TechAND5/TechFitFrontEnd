@@ -8,11 +8,11 @@ import { Usuario } from '../models/usuario';
 import { Dia } from '../models/dia';
 
 @Component({// Este annotation nos ayuda a la configuración del componente
- 	selector: 'habito',// En que selector se va a renderizar
- 	templateUrl: './habito.component.html', // En que ruta esta su template
- 	styleUrls: ['./habito.component.css']// En que ruta se encuentra su hoja de estilos
+ 	selector: 'habitos',// En que selector se va a renderizar
+ 	templateUrl: './habitos.component.html', // En que ruta esta su template
+ 	styleUrls: ['./habitos.component.css']// En que ruta se encuentra su hoja de estilos
 })
-export class HabitoComponent {
+export class HabitosComponent {
 	lista_habitos:any;
 
 	constructor(private _http:Http){

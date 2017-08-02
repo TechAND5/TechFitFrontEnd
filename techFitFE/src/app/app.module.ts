@@ -8,9 +8,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { routing } from './routing';
 
-import { UsuarioComponent } from './usuario_component/usuario.component';
 import { HabitosComponent } from './habitos_component/habitos.component';
-import { DiaComponent } from './dia_component/dia.component';
 import { MenuComponent } from './menu_component/menu.component';
 import { DatePickerComponent } from './datepicker/datepicker';
 import { DetalleHabitoComponent } from './detalleHabito_component/detalleHabito.component';
@@ -18,9 +16,7 @@ import { DetalleHabitoComponent } from './detalleHabito_component/detalleHabito.
 @NgModule({
   declarations: [
     AppComponent,
-    UsuarioComponent,
     HabitosComponent,
-    DiaComponent,
     MenuComponent,
     DatePickerComponent,
     DetalleHabitoComponent

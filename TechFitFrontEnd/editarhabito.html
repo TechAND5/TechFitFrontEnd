@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TechFit</title>
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
+	<link rel="stylesheet" href="./style/bootstrap.css">
+	<link rel="stylesheet" href="./style/style.css">
+   <link rel="stylesheet" href="./style/calendar.css">   
+</head>
+<body >
+	<header>     
+      <nav class="navbar navbar-light navbar-static bg-faded burgerMenu">
+         <div class="container-fluid">     
+            <div class="navbar-header col-xs-12">
+                  <button type="button" class="navbar-toggle collapsed pull-left burgerIcon"  id="navbarSideButton">
+                     <span class="sr-only">Toggle navigation</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand pull-right" href="#"><img class="logoTechFit" src="./img/logotechfit-1.png" alt="logo"></a>
+               </div>
+               <ul class="navbar-side pull-left desaparece" id="navbarSide">
+                  <li class="navbar-side-item">
+                     <a href="#" class="side-link"><span class="glyphicon glyphicon-remove" id="btnOcultar"></span></a>
+                  </li>
+                  <li class="navbar-side-item" >
+                     <a href="habitList.html" class="side-link">
+                        <span class="glyphicon glyphicon-list-alt"></span>
+                        <span> Lista de Habitos</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="editarhabito.html" class="side-link">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        <span> Nuevo Habito</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="perfil.html" class="side-link">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span> Perfil</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="#" class="side-link">
+                        <span class="glyphicon glyphicon-share"></span>
+                        <span> Compartir</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="#" class="side-link">
+                        <span class="glyphicon glyphicon-log-out"></span>
+                        <span> LogOut</span>
+                     </a>
+                  </li>
+               </ul>
+         </div>
+      </nav> 
+   </header>
+   <section>
+		<div class="container">
+	  		<h2>Tu Habito</h2>
+	  		<form action="/action_page.php"  method="post" id="editahabito" novalidate>
+	    		<div class="form-group">
+			      <label for="titulo">Título:</label>
+			      <input type="titulo" class="form-control" id="titulo" placeholder="Habito" name="text" minlength="10" pattern="[a-z]" required>
+			      <div class="mensajes_error_habito">
+						<div id="titulo[valueMissing]" class="errorH">Introduzca sus datos.</div>
+						<div id="titulo[typeMismatch]" class="errorH">El formato no se corresponde con un titulo.</div>
+						<div id="titulo[patternMismatch]" class="errorH">El formato no se corresponde con un titulo.</div>
+					</div>
+			    </div>
+	    		<div class="form-group">
+			      <label for="text">Descripción:</label>
+			      <input type="text" class="form-control" id="descripcion" placeholder="descripción">
+			    </div>
+			    <div class="form-group">
+			      <label for="dateinicio">Fecha de Inicio:</label>
+			      <input type="date" class="form-control" id="dateinicio" name="dateinicio"  required>
+			       <div class="mensajes_error_habito">
+						<div id="dateinicio[valueMissing]" class="errorH">Introduzca la fecha de inicio.</div>
+						<div id="date[typeMismatch]" class="errorH">El formato no puede estar vacio.</div>
+					</div>
+			    </div>
+			    <div class="form-group">
+			      <label for="datefinal">Fecha Final:</label>
+			      <input type="date" class="form-control" id="datefinal" name="datefinal" required>
+			      <div class="mensajes_error_habito">
+						<div id="datefinal[valueMissing]" class="errorH">Introduzca la fecha final.</div>
+						<div id="date[typeMismatch]" class="errorH">El formato no puede estar vacio.</div>
+					</div>
+			     </div>
+	   		    <button type="submit" class="btn btn-default"  form="aceptarForm" value="aceptarForm" id="btnaceptarForm">Aceptar</button>
+	  
+   </section>
+
+
+</body>
+<script src="./js/js.js"></script>
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="./js/bootstrap.js"></script>
+<script src="./js/editarhabito.js"></script>
+</html>

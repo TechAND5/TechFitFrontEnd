@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TechFit</title>
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
+	<link rel="stylesheet" href="./style/bootstrap.css">
+	<link rel="stylesheet" href="./style/style.css">
+   <link rel="stylesheet" href="./style/calendar.css">   
+</head>
+<body >
+	<header>     
+      <nav class="navbar navbar-light navbar-static bg-faded burgerMenu">
+         <div class="container-fluid">     
+            <div class="navbar-header col-xs-12">
+                  <button type="button" class="navbar-toggle collapsed pull-left burgerIcon"  id="navbarSideButton">
+                     <span class="sr-only">Toggle navigation</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand pull-right" href="#"><img class="logoTechFit" src="./img/logotechfit-1.png" alt="logo"></a>
+               </div>
+               <ul class="navbar-side pull-left desaparece" id="navbarSide">
+                  <li class="navbar-side-item">
+                     <a href="#" class="side-link"><span class="glyphicon glyphicon-remove" id="btnOcultar"></span></a>
+                  </li>
+                  <li class="navbar-side-item" >
+                     <a href="habitList.html" class="side-link">
+                        <span class="glyphicon glyphicon-list-alt"></span>
+                        <span> Lista de Habitos</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="editarhabito.html" class="side-link">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        <span> Nuevo Habito</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="perfil.html" class="side-link">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span> Perfil</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="#" class="side-link">
+                        <span class="glyphicon glyphicon-share"></span>
+                        <span> Compartir</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="#" class="side-link">
+                        <span class="glyphicon glyphicon-log-out"></span>
+                        <span> LogOut</span>
+                     </a>
+                  </li>
+               </ul>
+         </div>
+      </nav> 
+   </header>
+   <section>
+      <div class="btnsD col-xs-5 col-xs-offset-7">
+         <button id="editarHBtn" type="buton" class="btn btn-default" name="btnEditarH" aria-label="btnEditarH">
+            <span class="glyphicon glyphicon-pencil"> </span>
+         </button>
+      </div> 
+      <div class="container">
+         <h2>Tu Perfil</h2>
+         <form action="/action_page.php"  method="post" id="editahabito" novalidate>
+            <div class="form-group">
+               <label for="name">Nombre:</label>
+               <input type="name" class="form-control" id="name" placeholder="name" name="name" minlength="10" pattern="[a-z]" required>
+               <div class="mensajes_error_perfil">
+                  <div id="name[valueMissing]" class="errorPerfil">Introduzca sus datos.</div>
+                  <div id="name[typeMismatch]" class="errorPerfil">El formato no se corresponde con un nombre.</div>
+                  <div id="name[patternMismatch]" class="errorPerfil">El formato no se corresponde con un nombre.</div>
+               </div>
+            <div class="form-group">
+               <label for="username">Username:</label>
+               <input type="username" class="form-control" id="username" placeholder="username" name="username" required>
+               <div class="mensajes_error_perfil">
+                  <div id="username[valueMissing]" class="errorPerfil">Introduzca sus datos.</div>
+                  <div id="username[typeMismatch]" class="errorPerfil">El formato no se corresponde con un nombre.</div>
+               </div>
+
+            <div class="form-group">
+               <label for="email">Email:</label>
+               <input type="email" class="form-control" id="email" placeholder="email" name="email" required>
+               <div class="mensajes_error_perfil">
+                  <div id="email[valueMissing]" class="errorPerfil">Introduzca sus datos.</div>
+                  <div id="email[typeMismatch]" class="errorPerfil">El formato no se corresponde con un email.</div>
+               </div>   
+            <div class="form-group">
+               <label for="password">Password:</label>
+               <input type="password" class="form-control" id="password" placeholder="password" name="password" required>
+               <div class="mensajes_error_perfil">
+                  <div id="password[valueMissing]" class="errorPerfil">Introduzca sus datos.</div>
+                  <div id="password[typeMismatch]" class="errorPerfil">El formato no se corresponde con un email.</div>
+               </div> <br>
+               <button type="submit" class="btn btn-default"  form="perfilForm" value="perfilForm" id="btnperfilForm">Aceptar</button>
+
+   </section>
+
+
+
+
+</body>
+<script src="./js/js.js"></script>
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="./js/bootstrap.js"></script>
+<script src="./js/perfil.js"></script>
+</html>

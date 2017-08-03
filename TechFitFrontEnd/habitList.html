@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TechFit</title>
+	<link rel="stylesheet" href="./style/bootstrap.css">
+	<link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+	<header>     
+      <nav class="navbar navbar-light navbar-static bg-faded burgerMenu">
+         <div class="container-fluid">     
+            <div class="navbar-header col-xs-12">
+                  <button type="button" class="navbar-toggle collapsed pull-left burgerIcon"  id="navbarSideButton">
+                     <span class="sr-only">Toggle navigation</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand pull-right" href="#"><img class="logoTechFit" src="./img/logotechfit-1.png" alt="logo"></a>
+               </div>
+               <ul class="navbar-side pull-left desaparece" id="navbarSide">
+                  <li class="navbar-side-item">
+                     <a href="#" class="side-link"><span class="glyphicon glyphicon-remove" id="btnOcultar"></span></a>
+                  </li>
+                  <li class="navbar-side-item" >
+                     <a href="habitList.html" class="side-link">
+                        <span class="glyphicon glyphicon-list-alt"></span>
+                        <span> Lista de Habitos</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="editarhabito.html" class="side-link">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        <span> Nuevo Habito</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="perfil.html" class="side-link">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span> Perfil</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="#" class="side-link">
+                        <span class="glyphicon glyphicon-share"></span>
+                        <span> Compartir</span>
+                     </a>
+                  </li>
+                  <li class="navbar-side-item">
+                     <a href="#" class="side-link">
+                        <span class="glyphicon glyphicon-log-out"></span>
+                        <span> LogOut</span>
+                     </a>
+                  </li>
+               </ul>
+         </div>
+      </nav> 
+   </header>
+	<section class="container">
+      <ul class="listaHabitos">
+         <li class="itemHabitos row" id="h1">
+            <a href="detalleH.html">
+               <div  class="infoHabitos ">
+                  <span class="col-xs-1">
+                     <img  class="logoCircle" src="./img/logotechfit-2.png" alt="logo">
+                  </span>
+                  <span class="col-xs-6 tituloH">Comer sano</span>
+                  <span class="col-xs-3">6 dias</span>
+                  <span class="col-xs-2 porcentaje">60%</span>
+               </div>
+               <div class="progress">
+                  <div class="progress-bar col-xs-12" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                     <span class="sr-only">60% Complete</span>
+                  </div>
+               </div>
+            </a>
+         </li>
+         <li class="itemHabitos row">
+            <a href="detalleH.html">
+               <div class="infoHabitos ">
+                  <span class="col-xs-1">
+                     <img  class="logoCircle" src="./img/logotechfit-2.png" alt="logo">
+                  </span>
+                  <span class="col-xs-6 tituloH">Montar una ola</span>
+                  <span class="col-xs-3">15 dias</span>
+                  <span class="col-xs-2 porcentaje">0%</span>
+               </div>
+               <div class="progress">
+                  <div class="progress-bar col-xs-12" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                     <span class="sr-only">0% Complete</span>
+                  </div>
+               </div>
+            </a>  
+         </li>
+         <li class="itemHabitos row">
+            <a href="detalleH.html">
+               <div class="infoHabitos ">
+                  <span class="col-xs-1">
+                     <img  class="logoCircle" src="./img/logotechfit-2.png" alt="logo">
+                  </span>
+                  <span class="col-xs-6 tituloH">Conquistar el mundo</span>
+                  <span class="col-xs-3">360 dias</span>
+                  <span class="col-xs-2 porcentaje">100%</span>
+               </div>
+               <div class="progress">
+                  <div class="progress-bar col-xs-12" role="progressbar"   aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                    <span class="sr-only">100% Complete</span>
+                  </div>
+               </div>
+            </a>
+         </li>
+      </ul>
+      
+   </section>
+	<button id="newHabitbtn" type="buton" class="btn btn-default"  name="btnNewH" aria-label="btnNewH">
+      <span class="glyphicon glyphicon-plus"> </span>
+   </button>
+</body>
+<script src="./js/js.js"></script>
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="./js/bootstrap.js"></script>
+</html>

@@ -1,5 +1,5 @@
 <div>
-        <input #dateText type='text' value={{selDate}} (change)="setInputDate($event)"/>
+        <!--input #dateText type='text' value={{selDate}} (change)="setInputDate($event)"/-->
         <date-picker 
               [value]="value"
               [minDate]="minDate" 
@@ -7,7 +7,7 @@
               [disableDays]="disableDays"
               [toContainPrevMonth]="toContainPrevMonth"
               [toContainNextMonth]="toContainNextMonth"
-              (selectedDate)='setDate($event)'>                
+              (selectedDate)="setDate($event)">                
         </date-picker>
   </div>
   

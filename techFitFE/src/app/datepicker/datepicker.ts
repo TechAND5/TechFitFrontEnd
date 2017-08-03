@@ -28,12 +28,15 @@ export class DatePickerComponent implements OnChanges{
 	private nextMonth:string;
 	private prevYear:string;
 	private nextYear:string;
-	private showDp = 'none';
+	private showDp = 'block';
 	public selectedDate = new EventEmitter();
 		
 	
+	private dateList:any[]=[{"y":2017,"m":"Aug","d":9},{"y":2017,"m":"Aug","d":11}];
+
 	ngOnChanges() {
-        this.daysofWeek = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+
+        this.daysofWeek = ['Mo','Tu','We','Th','Fr','Sa','Su'];
 		this.months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 		this.currMonth = this.months[new Date().getMonth()].toString();
 		this.currYear = new Date().getFullYear().toString();
@@ -43,7 +46,7 @@ export class DatePickerComponent implements OnChanges{
 		this.prevYear = (parseInt(this.currYear) - 1).toString();
 		this.nextYear = (parseInt(this.currYear) + 1).toString();
 		//Set Date Array
-        if (this.value!='') {
+        /*if (this.value!='') {
             let givenDate = moment(this.value,"MM/DD/YYYY",true);
             this.currMonth = this.months[givenDate.month()].toString();
             this.currYear = givenDate.year();
@@ -51,16 +54,18 @@ export class DatePickerComponent implements OnChanges{
         }
         else {
             this.dates = this.setDateArray(this.currMonth,this.currYear,'');
-        }
+        }*/
+
+       	this.dates = this.setDateArray(this.dateList);
 				
 	}
 
-	openDatePicker() {
+	/*openDatePicker() {
 		if (this.showDp=='none')
 			this.showDp = 'block';
 		else
 			this.showDp = 'none';	
-	}
+	}*/
 
 	setPrevMonth() {
 		this.nextMonth = this.currMonth;
@@ -80,7 +85,7 @@ export class DatePickerComponent implements OnChanges{
 			this.nextYear = (parseInt(this.currYear) + 1).toString();
 		}	
 		//Set Date Array to previous month
-		this.dates = this.setDateArray(this.currMonth,this.currYear,'');
+		//this.dates = this.setDateArray(this.currMonth,this.currYear,'');
 	}
 
 	setNextMonth() {
@@ -101,11 +106,20 @@ export class DatePickerComponent implements OnChanges{
 			this.nextYear = (parseInt(this.currYear) + 1).toString();
 		}	
 		//Set Date Array to next month
-		this.dates = this.setDateArray(this.currMonth,this.currYear,'');
+		//this.dates = this.setDateArray(this.currMonth,this.currYear,'');
 	}
 
-	setDateArray(month,year,date):any{
-		
+
+
+	setDateArray(dateList):any{
+		let tempDateMain=[];
+
+		// code...
+		let month=dateList[0].m;
+		let year=dateList[0].y;
+		let date=dateList[0].d;
+	
+
 		let tempLastDate = this.decideDate(month,year);
 		let temp = [];
 		for (let i=1;i<=tempLastDate;i++){
@@ -113,20 +127,33 @@ export class DatePickerComponent implements OnChanges{
             let pastDate = moment(this.minDate);
             let futureDate = moment(this.maxDate).add(1, 'd');
             let dbld = false;
-            //To disable Days - Index based 0-6
+            /*To disable Days - Index based 0-6
             for (let dayIndex=0; dayIndex<this.disableDays.length; dayIndex++){
                 if (currentDate.day()==this.disableDays[dayIndex]) {
-                    dbld = true;
+                    dbld = false;
                 }
-            }
+            }*/
             if (currentDate.isBefore(this.minDate, true) || currentDate.isAfter(futureDate, true)) {
                 dbld = true;
             }
-			if (i!=date)
+
+           
+
+            let isSelected=false;
+
+            for (var aD in dateList) {
+            	isSelected = dateList[aD].d == i?true:false;
+            	if(isSelected) break;
+            }
+
+
+
+			if (!isSelected)
 				temp.push({'month':this.months.indexOf(month)+1,'date':i,'disabled':dbld,'selected':false,'empty':false});	
 			else
 				temp.push({'month':this.months.indexOf(month)+1,'date':i,'disabled':dbld,'selected':true,'empty':false});	
 		}
+
 		this.completeDates = temp;	
 
 		//Determine Date of First of the Month
@@ -158,7 +185,7 @@ export class DatePickerComponent implements OnChanges{
 			let nIndex = 1;
 			for (let i=6;i>lastDate.getDay();i--){
                 if (this.toContainNextMonth) {
-                    this.tempArray.push({'month':firstDate.getMonth()+1,'date':nIndex,disabled:true,'selected':false,'empty':false});
+                    this.tempArray.push({'month':firstDate.getMonth()+1,'date':nIndex,'disabled':true,'selected':false,'empty':false});
                 }
                 else {
                     this.tempArray.push({'month':'','date':'',disabled:false,'selected':false,'empty':true});
@@ -168,7 +195,7 @@ export class DatePickerComponent implements OnChanges{
 		}
 		
 		let tempDateChild=[];
-		let tempDateMain=[];
+		
 		for (let date in this.tempArray){
 			if ((parseInt(date)+1)%7 == 0){
 				tempDateChild.push(this.tempArray[date]);
@@ -179,6 +206,7 @@ export class DatePickerComponent implements OnChanges{
 				tempDateChild.push(this.tempArray[date]);
 			}
 		}
+
 		return tempDateMain;
 
 	}
@@ -203,16 +231,17 @@ export class DatePickerComponent implements OnChanges{
 			break;
 			default : break;
 		}
-		return last;
+		return last;//define los dias que tienen los meses
 	}
 
-	setDate(sDate) {
+	setDate(sDate) { //pinta dias clicados
+		console.log("entra setDate:",this.value,this.currMonth,this.currYear,sDate.date);
 		if (!sDate.disabled){
 			if (sDate.date!=''){
 				//Set the new date array with active date
-				this.dates = this.setDateArray(this.currMonth,this.currYear,sDate.date);
-                let selDate = moment().year(this.currYear).month(this.currMonth).date(sDate.date).format('MM/DD/YYYY',true);
-				this.selectedDate.next(selDate);
+				//this.dates = this.setDateArray(this.currMonth,this.currYear,sDate.date);
+                //let selDate = moment().year(this.currYear).month(this.currMonth).date(sDate.date).format('MM/DD/YYYY',true);
+				//this.selectedDate.next(selDate);//emit version nueva de next
 			}
 		}
 	}

@@ -25,11 +25,11 @@ export class HabitosComponent {
 		)
 		.do(
 			(misHabitos: any[]) => {
-			console.log('getHabitos...' + misHabitos);
+			console.log('getHabitos...', misHabitos);
 		})
 		.catch(
 			(error:any) => {
-				console.log('Error de conexión:'+error);
+				console.log('Error de conexión:', error);
 				return Observable.throw(error.json().error || 'Server error');
 			})
 

@@ -1,13 +1,36 @@
-<div>
-        <!--input #dateText type='text' value={{selDate}} (change)="setInputDate($event)"/-->
-        <date-picker 
-              [value]="value"
-              [minDate]="minDate" 
-              [maxDate]="maxDate"
-              [disableDays]="disableDays"
-              [toContainPrevMonth]="toContainPrevMonth"
-              [toContainNextMonth]="toContainNextMonth"
-              (selectedDate)="setDate($event)">                
-        </date-picker>
+ <div class="container">
+ <br>
+  <div class="row">
+    <div>
+      <span class="col-xs-1">
+        <img  class="logoCircle" src="assets/img/logotechfit-2.png" alt="logo">
+      </span>
+      <span class="col-xs-2">Título: {{_habito.titulo}}</span><!--titulo-->
+      <span class="col-xs-4">Descripción: {{_habito.descripcion}}</span>
+      <span class="col-xs-2">Estado: {{_habito.estado}}</span><!--estado-->
+      <span class="col-xs-2"></span><!--progreso-->
+      <span class="col-xs-2">Duración: {{_habito.listaDias.length}}</span>
+      <span class="col-xs-8">Inicio: {{_habito.fechaI}}</span>
+      <span class="col-xs-3">Fin: {{_habito.fechaF}}</span>
+     </div>
+    <div class="progress">
+     <div class="progress-bar col-xs-12" role="progressbar"  aria-valuemin="0" aria-valuemax="100" [style.width.%] ="_habito.progreso">
+       <span class="sr-only">{{_habito.progreso}}% Complete</span>
+     </div>
+   </div>
+   <br>
+  <div class="row">
+    <date-picker class= "col-md-12"
+    [value]="value"
+    [minDate]="minDate" 
+    [maxDate]="maxDate"
+    [disableDays]="disableDays"
+    [toContainPrevMonth]="toContainPrevMonth"
+    [toContainNextMonth]="toContainNextMonth"
+    (selectedDate)="setDate($event)">                
+    </date-picker> 
   </div>
-  
+ </div>
+
+
+

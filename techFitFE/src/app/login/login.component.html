@@ -1,0 +1,20 @@
+<div class="mdl-grid demo-content">
+    <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
+        <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+            <div class="mdl-textfield mdl-js-textfield" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                <label class="mdl-textfield__label" for="username">Tu email</label>
+                <input type="text" class="mdl-textfield__input" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+                <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                <label class="mdl-textfield__label" for="password">Tu contraseña</label>
+                <input type="password" class="mdl-textfield__input" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+                <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+            </div>
+            <div>
+                <button [disabled]="loading" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Login</button>
+            </div>
+            <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+        </form>
+    </div>
+</div>

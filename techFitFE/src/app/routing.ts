@@ -5,7 +5,7 @@ import { DetalleHabitoComponent } from './detalleHabito_component/detalleHabito.
 
 const appRoutes: Routes = [
 	{ path: 'habitos', component: HabitosComponent },
-	{ path: 'habitos/:hid', component: DetalleHabitoComponent },
+	{ path: 'habito/:hid', component: DetalleHabitoComponent },
 	{ path: '',redirectTo: '/habitos',pathMatch: 'full'}
 ];
 

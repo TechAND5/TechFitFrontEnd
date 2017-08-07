@@ -42,7 +42,7 @@ export class DetalleHabitoComponent implements OnInit {
       this._hid = params['hid'];
       console.log("hid: ",this._hid);
 
-      this._http.get('http://www.mocky.io/v2/59847f85110000930d416826')
+      this._http.get('http://www.mocky.io/v2/59847f85110000930d416826')//http://www.mocky.io/v2/5988408f270000bb00afee55
         .map(
             (response: Response) => {
                 this._habito=<Habito>response.json(); 

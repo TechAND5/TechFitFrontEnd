@@ -1,7 +1,7 @@
 <section class="container">
   <ul class="listaHabitos">
    <li class="itemHabitos row" id="h1" *ngFor="let un_habito of lista_habitos">
-    <a [routerLink]="['/habito', un_habito.hid]">
+   <a *ngIf="un_habito" [routerLink]="['/habito', un_habito.hid]">
      <div  class="infoHabitos ">
       <span class="col-xs-1">
        <img  class="logoCircle" src="assets/img/logotechfit-2.png" alt="logo">
@@ -13,10 +13,10 @@
    <div class="progress">
     <div class="progress-bar col-xs-12" role="progressbar"  aria-valuemin="0" aria-valuemax="100" [style.width.%] ="un_habito.progreso">
      <span class="sr-only">{{un_habito.progreso}}% Complete</span>
-    </div>
    </div>
-    </a>
-   </li>
-  </ul>
+ </div>
+</a>
+</li>
+</ul>
 </section>
 

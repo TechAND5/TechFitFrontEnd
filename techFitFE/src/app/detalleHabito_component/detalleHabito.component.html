@@ -1,6 +1,6 @@
 <div class="container">
  <br>
-  <div class="row">
+  <div class="row" *ngIf="_habito">
     <div>
       <span class="col-xs-1">
         <img  class="logoCircle" src="assets/img/logotechfit-2.png" alt="logo">
@@ -21,7 +21,7 @@
    <br>
   <div class="row">
     <date-picker class= "col-xs-12"
-    [value]="value"
+    [value]="dateList"
     [minDate]="minDate" 
     [maxDate]="maxDate"
     [disableDays]="disableDays"

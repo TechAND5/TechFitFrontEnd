@@ -12,6 +12,12 @@ import { HabitosComponent } from './habitos_component/habitos.component';
 import { MenuComponent } from './menu_component/menu.component';
 import { DatePickerComponent } from './datepicker/datepicker';
 import { DetalleHabitoComponent } from './detalleHabito_component/detalleHabito.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './login/logout.component';
+
+import { LoginService } from './services/login.service';
+import { AuthenticationService } from './api/auth.service';
+import { TokenService } from './persistence/token.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +25,9 @@ import { DetalleHabitoComponent } from './detalleHabito_component/detalleHabito.
     HabitosComponent,
     MenuComponent,
     DatePickerComponent,
-    DetalleHabitoComponent
+    DetalleHabitoComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +36,8 @@ import { DetalleHabitoComponent } from './detalleHabito_component/detalleHabito.
     BrowserAnimationsModule,
     routing
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [LoginService, AuthenticationService, TokenService],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http,Jsonp, Headers, Response,RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 
-import {auth_url} from './access.data'
 import {TokenService} from '../persistence/token.service'
 import {LoginService} from '../services/login.service';
 
@@ -23,7 +22,7 @@ export class AuthenticationService{
         let headers = new Headers({ 'Accept': 'application/json','username':username,'password':password });
         this.options = new RequestOptions({ headers: headers });
 
-        return this._http.get(auth_url, this.options)
+        return this._http.post("http://www.mocky.io/v2/598892a72700002f05afef77",this.options)
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 console.log('Response from auth:',response,response.text());

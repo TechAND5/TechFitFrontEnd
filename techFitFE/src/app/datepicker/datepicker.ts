@@ -15,7 +15,7 @@ export class DatePickerComponent implements OnChanges{
     @Input() disableDays:Array<number>;
     @Input() toContainPrevMonth:boolean;
     @Input() toContainNextMonth:boolean;
-    @Input() value:string='';
+    @Input() value:any='';
 	
 	private daysofWeek:Array<String>;
 	private currMonth:string;
@@ -32,7 +32,7 @@ export class DatePickerComponent implements OnChanges{
 	public selectedDate = new EventEmitter();
 		
 	
-	private dateList:any[]=[{"y":2017,"m":"Aug","d":9},{"y":2017,"m":"Aug","d":11}];
+	
 
 	ngOnChanges() {
 
@@ -56,7 +56,7 @@ export class DatePickerComponent implements OnChanges{
             this.dates = this.setDateArray(this.currMonth,this.currYear,'');
         }*/
 
-       	this.dates = this.setDateArray(this.dateList);
+       	this.dates = this.setDateArray(this.value);
 				
 	}
 
@@ -112,12 +112,13 @@ export class DatePickerComponent implements OnChanges{
 
 
 	setDateArray(dateList):any{
+
 		let tempDateMain=[];
 
 		// code...
-		let month=dateList[0].m;
-		let year=dateList[0].y;
-		let date=dateList[0].d;
+		let month=this.currMonth;
+		let year=this.currYear;
+		let date=1;
 	
 
 		let tempLastDate = this.decideDate(month,year);
@@ -145,7 +146,6 @@ export class DatePickerComponent implements OnChanges{
             	isSelected = dateList[aD].d == i?true:false;
             	if(isSelected) break;
             }
-
 
 
 			if (!isSelected)
@@ -235,15 +235,36 @@ export class DatePickerComponent implements OnChanges{
 	}
 
 	setDate(sDate) { //pinta dias clicados
-		console.log("entra setDate:",this.value,this.currMonth,this.currYear,sDate.date);
+		console.log("entra setDate:",this.value,this.months.indexOf(this.currMonth)+1,this.currYear,sDate.date);
 		if (!sDate.disabled){
 			if (sDate.date!=''){
+				console.log("sDate:",sDate);
 				//Set the new date array with active date
-				//this.dates = this.setDateArray(this.currMonth,this.currYear,sDate.date);
+				//this.dates = this.setDateArray(this.currMonth,this.currYear,"sDate:",sDate.date);
                 //let selDate = moment().year(this.currYear).month(this.currMonth).date(sDate.date).format('MM/DD/YYYY',true);
 				//this.selectedDate.next(selDate);//emit version nueva de next
-				this.dates = this.setDateArray(this.dateList);
+				this.addRemovedate( {"y":this.currYear,"m":this.months.indexOf(this.currMonth)+1,"d":sDate.date} );
+				this.dates = this.setDateArray(this.value);
 			}
 		}
 	}
+
+
+	addRemovedate(dObj){
+		let exists=false;
+		if(this.value)for (var i = 0; i < this.value.length; i++) {
+
+			let aDate= this.value[i];
+			console.log("Comprobando....",aDate.y, aDate.m,aDate.d,"||",dObj.y , dObj.m,  dObj.d);
+			if( aDate.y== dObj.y && aDate.m == dObj.m && aDate.d== dObj.d ){
+				exists=true;
+				this.value.splice(i, 1);
+				break;
+			}
+		}
+		
+		if(!exists) this.value.push(dObj);
+
+	}
+
 }

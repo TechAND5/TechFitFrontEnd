@@ -22,6 +22,8 @@ export class DetalleHabitoComponent implements OnInit {
    
     private _habito:Habito;
     private _hid:number;
+
+    private dateList:any[]=[{"y":2017,"m":8,"d":13},{"y":2017,"m":8,"d":11}];
 	
     setInputDate(event) {
         this.value = event.target.value;
@@ -42,7 +44,7 @@ export class DetalleHabitoComponent implements OnInit {
       this._hid = params['hid'];
       console.log("hid: ",this._hid);
 
-      this._http.get('http://www.mocky.io/v2/59847f85110000930d416826')//http://www.mocky.io/v2/5988408f270000bb00afee55
+      this._http.get('http://www.mocky.io/v2/5988744e2700008702afef05')//http://172.27.100.130/techFit/apiFit/habitos/1
         .map(
             (response: Response) => {
                 this._habito=<Habito>response.json(); 
@@ -50,8 +52,9 @@ export class DetalleHabitoComponent implements OnInit {
             }
         )
         .do(
-            (habitos: Habito) => {
-            console.log('Detalle Habito...', habitos);
+            (habito: Habito) => {
+            console.log('Detalle Habito...', habito.listaDias);
+            this.dateList = this.transformStr2date(habito.listaDias);
         })
         .catch(
             (error:any) => {
@@ -64,4 +67,17 @@ export class DetalleHabitoComponent implements OnInit {
 
     });
   }
+
+  transformStr2date(arraystrdates):any{
+      let listaFechas:any[]=[];
+      for (var aD in arraystrdates) {
+          let brokendate=arraystrdates[aD].split("/");
+          listaFechas.push({"y":parseInt(brokendate[2]),"m":parseInt(brokendate[1]),"d":parseInt(brokendate[0])});
+
+      }
+      console.log(listaFechas);
+
+      return listaFechas;
+  }
+
 }

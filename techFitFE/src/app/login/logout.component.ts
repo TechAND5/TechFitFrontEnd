@@ -6,7 +6,7 @@ import {LoginService} from '../services/login.service';
 import { Usuario } from '../models/usuario';
 
 @Component({
-    selector: 'login',
+    selector: 'logout',
     templateUrl: './login.component.html'
 })
 

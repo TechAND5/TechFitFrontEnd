@@ -16,7 +16,7 @@ export class HabitosComponent {
 	lista_habitos:any;
 
 	constructor(private _http:Http){
-		this._http.get('http://www.mocky.io/v2/5980a2251100001f0f1cfada')
+		this._http.get('http://www.mocky.io/v2/598875b52700009102afef09')//http://172.27.100.130/techFit/apiFit/habitos
 		.map(
 			(response: Response) => {
 				this.lista_habitos=<any[]>response.json(); 

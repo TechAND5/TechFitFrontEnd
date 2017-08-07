@@ -240,10 +240,10 @@ export class DatePickerComponent implements OnChanges{
 			if (sDate.date!=''){
 				//Set the new date array with active date
 				//this.dates = this.setDateArray(this.currMonth,this.currYear,sDate.date);
-                let selDate = moment().year(this.currYear).month(this.currMonth).date(sDate.date).format('MM/DD/YYYY',true);
-				this.selectedDate.next(selDate);//emit version nueva de next
-				
-			}
+                //let selDate = moment().year(this.currYear).month(this.currMonth).date(sDate.date).format('MM/DD/YYYY',true);
+				//this.selectedDate(s);//emit version nueva de next
+				//this.dates = this.setDateArray(this.dateList);
+			
 		}
 	}
 

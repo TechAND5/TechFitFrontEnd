@@ -86,6 +86,7 @@ export class DatePickerComponent implements OnChanges{
 		}	
 		//Set Date Array to previous month
 		//this.dates = this.setDateArray(this.currMonth,this.currYear,'');
+		this.dates = this.setDateArray(this.value);
 	}
 
 	setNextMonth() {
@@ -107,6 +108,7 @@ export class DatePickerComponent implements OnChanges{
 		}	
 		//Set Date Array to next month
 		//this.dates = this.setDateArray(this.currMonth,this.currYear,'');
+		this.dates = this.setDateArray(this.value);
 	}
 
 

@@ -43,8 +43,8 @@ export class DetalleHabitoComponent implements OnInit {
       console.log('params',params);
       this._hid = params['hid'];
       console.log("hid: ",this._hid);
-
-      this._http.get('http://www.mocky.io/v2/5988744e2700008702afef05')//http://172.27.100.130/techFit/apiFit/habitos/1
+                                                                        // /:{hid}
+      this._http.get('http://www.mocky.io/v2/5988744e2700008702afef05')//http://172.27.100.130:8080/techFit/apiFit/habitos/?
         .map(
             (response: Response) => {
                 this._habito=<Habito>response.json(); 

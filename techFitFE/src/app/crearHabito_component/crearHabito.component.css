@@ -1,0 +1,14 @@
+.errorH{
+  font-size: 10px;
+  font-weight: 300;
+  color: #e60000;
+  padding-bottom: 5px;
+}
+
+.mensajes_error_habito div{
+	display: none;
+}
+
+.mensajes_error_habito div.show{
+	display: block;
+}

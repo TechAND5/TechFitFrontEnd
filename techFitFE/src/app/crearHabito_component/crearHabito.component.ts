@@ -12,5 +12,5 @@ import 'rxjs/Rx';
  	styleUrls: ['./crearHabito.component.css']// En que ruta se encuentra su hoja de estilos
 })
 export class CrearHabitoComponent {
-
+	
 }

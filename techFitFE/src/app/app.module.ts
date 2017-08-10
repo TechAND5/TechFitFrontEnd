@@ -14,6 +14,7 @@ import { DatePickerComponent } from './datepicker/datepicker';
 import { DetalleHabitoComponent } from './detalleHabito_component/detalleHabito.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './login/logout.component';
+import { CrearHabitoComponent } from './crearHabito_component/crearHabito.component';
 
 import { LoginService } from './services/login.service';
 import { AuthenticationService } from './api/auth.service';
@@ -27,7 +28,8 @@ import { TokenService } from './persistence/token.service';
     DatePickerComponent,
     DetalleHabitoComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    CrearHabitoComponent
   ],
   imports: [
     BrowserModule,

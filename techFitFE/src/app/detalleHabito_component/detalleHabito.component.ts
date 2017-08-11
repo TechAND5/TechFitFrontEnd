@@ -44,7 +44,7 @@ export class DetalleHabitoComponent implements OnInit {
       this._hid = params['hid'];
       console.log("hid: ",this._hid);
                                                                         // /:{hid}
-      this._http.get('http://www.mocky.io/v2/5988744e2700008702afef05')//http://172.27.100.130:8080/techFit/apiFit/habitos/?
+      this._http.get('http://www.mocky.io/v2/598c6d47260000db06ec22ad')//http://172.27.100.130:8080/techFit/apiFit/habitos/'+this._hid
         .map(
             (response: Response) => {
                 this._habito=<Habito>response.json(); 
@@ -71,8 +71,8 @@ export class DetalleHabitoComponent implements OnInit {
   transformStr2date(arraystrdates):any{
       let listaFechas:any[]=[];
       for (var aD in arraystrdates) {
-          let brokendate=arraystrdates[aD].split("/");
-          listaFechas.push({"y":parseInt(brokendate[2]),"m":parseInt(brokendate[1]),"d":parseInt(brokendate[0])});
+          let brokendate=arraystrdates[aD].split("-");
+          listaFechas.push({"y":parseInt(brokendate[0]),"m":parseInt(brokendate[1]),"d":parseInt(brokendate[2])});
 
       }
       console.log(listaFechas);

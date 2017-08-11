@@ -22,7 +22,7 @@ export class AuthenticationService{
         let headers = new Headers({ 'Accept': 'application/json','username':username,'password':password });
         this.options = new RequestOptions({ headers: headers });
 
-        return this._http.post("http://www.mocky.io/v2/598892a72700002f05afef77",this.options)
+        return this._http.post("http://www.mocky.io/v2/598892a72700002f05afef77",this.options)//http://172.27.100.130/techFit/apiFit/usuarios
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 console.log('Response from auth:',response,response.text());

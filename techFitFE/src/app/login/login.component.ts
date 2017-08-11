@@ -8,6 +8,7 @@ import { Usuario } from '../models/usuario';
 @Component({
     selector: 'login',
     templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css'],
     providers: [AuthenticationService,]
 })
 

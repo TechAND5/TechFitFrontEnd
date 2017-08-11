@@ -1,5 +1,14 @@
+<br>
+<br>
+<br>
 <div>
-    <div>
+    <div class="box1">
+        <header>
+            <div class="row">
+                <div class="col-md-6"></div>
+                    <img src=".././assets/img/logotechfit.png" class="img-responsive" alt="Imagen responsive">
+            </div>  
+        </header>
         <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
             <div [ngClass]="{ 'has-error': f.submitted && !username.valid }">
                 <label for="username">Tu email</label>
@@ -18,3 +27,4 @@
         </form>
     </div>
 </div>
+

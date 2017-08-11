@@ -1,0 +1,18 @@
+.bg-lightgray
+{
+    background-color:LightGray;
+}
+footer{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#text{
+    color:#C0CA33;
+}
+
+#footer-p{
+   position: fixed;
+   display: block;
+   bottom:0;
+   width: 100%;
+   padding: 0px;
+}

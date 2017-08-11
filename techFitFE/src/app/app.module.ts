@@ -15,6 +15,7 @@ import { DetalleHabitoComponent } from './detalleHabito_component/detalleHabito.
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './login/logout.component';
 import { CrearHabitoComponent } from './crearHabito_component/crearHabito.component';
+import { FooterComponent } from './footer_component/footer.component';
 
 import { LoginService } from './services/login.service';
 import { AuthenticationService } from './api/auth.service';
@@ -29,7 +30,8 @@ import { TokenService } from './persistence/token.service';
     DetalleHabitoComponent,
     LoginComponent,
     LogoutComponent,
-    CrearHabitoComponent
+    CrearHabitoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
